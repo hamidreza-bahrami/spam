@@ -33,9 +33,21 @@ def classify_text(text):
 
     return label, confidence
 
-
 def show_page():
-    st.write("<h3 style='text-align: center; color: blue;'>شناسایی ایمیل جعلی / اسپم</h3>", unsafe_allow_html=True)
+    st.write("<h3 style='text-align: center; color: blue;'>شناسایی ایمیل جعلی / اسپم ✉️</h3>", unsafe_allow_html=True)
+    st.write("<h6 style='text-align: center; color: black;'>Robo-Ai.ir طراحی و توسعه</h6>", unsafe_allow_html=True)
+    st.link_button("Robo-Ai بازگشت به", "https://robo-ai.ir")
+
+    container = st.container(border=True)
+    container.write("<h6 style='text-align: right; color: gray;'>تشخیص ایمیل های مشکوک به کلاهبرداری مالی 📮</h6>", unsafe_allow_html=True)
+    st.write('')
+
+    with st.sidebar:
+        st.write("<h5 style='text-align: center; color: blcak;'>تشخیص ایمیل اسپم با هوش مصنوعی</h5>", unsafe_allow_html=True)
+        st.divider()
+        st.write("<h5 style='text-align: center; color: black;'>طراحی و توسعه</h5>", unsafe_allow_html=True)
+        st.write("<h5 style='text-align: center; color: gray;'>حمیدرضا بهرامی</h5>", unsafe_allow_html=True)
+
     new_text = st.text_area('متن خود را وارد کنید',height=None,max_chars=None,key=None)
     
     if st.button('ارزیابی'):
