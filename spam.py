@@ -65,7 +65,8 @@ def show_page():
         
         else:
             out = translator.translate(new_text)
-            label, confidence = classify_text(out.text)
+            main_text = (out.text)
+            label, confidence = classify_text(main_text)
             if label == 'Negative':
                 with st.chat_message("assistant"):
                     with st.spinner('''درحال ارزیابی'''):
