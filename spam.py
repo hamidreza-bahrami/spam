@@ -13,6 +13,7 @@ import pickle
 import time
 from googletrans import Translator
 
+st.set_page_config(page_title='تشخیص ایمیل اسپم - RoboAi', layout='centered', page_icon='✉️')
 
 model = load_model("model.h5")
 translator = Translator()
@@ -65,8 +66,9 @@ def show_page():
         
         else:
             out = translator.translate(new_text)
-            main_text = (out.text)
-            label, confidence = classify_text(main_text)
+            translated_text = out.text
+            label, confidence = classify_text(translated_text)
+
             if label == 'Negative':
                 with st.chat_message("assistant"):
                     with st.spinner('''درحال ارزیابی'''):
